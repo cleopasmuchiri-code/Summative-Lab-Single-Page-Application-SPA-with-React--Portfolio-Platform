@@ -5,6 +5,7 @@ import Projects from "./components/Projects";
 const App = () => {
   const [projects, setProjects] = useState([]);
   const [selectedProject, setSelectedProject] = useState(null);
+  const [search, setSearch] = useState("");
 
   // add code
   const addProject = (formData) => {
@@ -56,6 +57,13 @@ const App = () => {
     setSelectedProject(null);
   };
 
+  // filter projects by search
+
+  // filtered project via search
+  const filteredProjects = projects.filter((p) =>
+    p.title.toLowerCase().includes(search.toLowerCase()),
+  );
+
   return (
     <main className="overflow-x-hidden h-screen w-screen p-8  bg-bg-main">
       <div className="font-heading w-full flex flex-col items-center mb-8">
@@ -68,10 +76,12 @@ const App = () => {
           selectedProject={selectedProject}
           onUpdateProject={updateProject}
         />
+
         <Projects
           onDeleteProject={deleteProject}
-          projects={projects}
+          projects={filteredProjects}
           onSelectProject={selectProject}
+          setSearch={setSearch}
         />
       </div>
     </main>

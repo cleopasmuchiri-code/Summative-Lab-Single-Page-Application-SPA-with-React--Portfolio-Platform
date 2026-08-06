@@ -25,6 +25,12 @@ const Form = ({ onAddProject, selectedProject, onUpdateProject }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    // check if formdata is empty
+
+    if (formData.title.trim() === "" || formData.description.trim() === "") {
+      return;
+    }
+
     // first check if its a selected item
 
     selectedProject && selectedProject.id
