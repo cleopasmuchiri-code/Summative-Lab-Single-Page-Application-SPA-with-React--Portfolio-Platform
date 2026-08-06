@@ -67,7 +67,7 @@ const App = () => {
   return (
     <main className="overflow-x-hidden h-screen w-screen p-8  bg-bg-main">
       <div className="font-heading w-full flex flex-col items-center mb-8">
-        <h1 className="text-text-primary text-2xl">Cleopa's Project</h1>
+        <h1 className="text-text-primary text-2xl">Cleopas' Project</h1>
         <div className="w-14 h-1.5 rounded-full bg-text-secondary mt-2"></div>
       </div>
       <div className="w-full h-full flex flex-col lg:flex-row  gap-8">
